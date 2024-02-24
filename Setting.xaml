@@ -1,0 +1,83 @@
+﻿<UserControl x:Class="Apply_Gule_And_Tape_PC.Setting"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Apply_Gule_And_Tape_PC"
+             mc:Ignorable="d"
+             d:DesignHeight="855"
+             d:DesignWidth="1645">
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <Grid Width="822.5"
+                  Height="845"
+                  VerticalAlignment="Top">
+                <Border BorderThickness="1"
+                        BorderBrush="Black"></Border>
+                
+            </Grid>
+            <Grid Width="822.5"
+                  Height="845"
+                  VerticalAlignment="Top">
+                <Border BorderThickness="1"
+                        BorderBrush="Black"></Border>
+                <StackPanel>
+                    <Label Content="Hệ Thống"
+                           FontSize="30"
+                           FontStyle="Normal"
+                           FontWeight="Bold"
+                           FontFamily="Source Sans Pro"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"></Label>
+                    <StackPanel Orientation="Horizontal"
+                                Margin="0,10,0,0">
+                        <Grid Width="405">
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="PLC Read:"
+                                       Width="150"
+                                       FontSize="20"
+                                       FontWeight="Bold"></Label>
+                                <TextBox x:Name="txb_PLC_Read"
+                                         Style="{StaticResource BlackCaretTextBoxStyle}"
+                                         FontSize="20"
+                                         FontWeight="Bold"
+                                         HorizontalContentAlignment="Center"
+                                         VerticalContentAlignment="Center"
+                                         BorderBrush="Black"
+                                         BorderThickness="1"
+                                         Width="250"></TextBox>
+                            </StackPanel>
+
+                        </Grid>
+                        <Grid Width="405">
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="PLC Write:"
+                                       Width="150"
+                                       FontSize="20"
+                                       FontWeight="Bold"></Label>
+                                <TextBox x:Name="txb_PLC_Write"
+                                         Style="{StaticResource BlackCaretTextBoxStyle}"
+                                         FontSize="20"
+                                         FontWeight="Bold"
+                                         HorizontalContentAlignment="Center"
+                                         VerticalContentAlignment="Center"
+                                         BorderBrush="Black"
+                                         BorderThickness="1"
+                                         Width="250"></TextBox>
+                            </StackPanel>
+
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel>
+                        <Button Content="Save"
+                                x:Name="bt_Save_Sys"
+                                Height="50"
+                                Width="100"
+                                Margin="645,680,0,0"></Button>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+
+    </Grid>
+</UserControl>
