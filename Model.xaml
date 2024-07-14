@@ -21,13 +21,13 @@
                             FontFamily="Source Sans Pro"
                             Height="60"
                             Width="544"
-                            Margin="0,10,0,0"
+                            Margin="0,5,0,0"
                             Foreground="Black"></Button>
-                    <Grid Height="380"
+                    <Grid Height="785"
                           Width="544">
                         <DataGrid x:Name="Models_Mode_1"
                                   AutoGenerateColumns="False"
-                                  FontSize="20"
+                                  FontSize="15"
                                   Foreground="Black"
                                   BorderBrush="Black"
                                   BorderThickness="1"
@@ -43,13 +43,13 @@
                                     <DataGridTextColumn.ElementStyle>
                                         <Style TargetType="{x:Type TextBlock}">
                                             <Setter Property="HorizontalAlignment"
-                                                    Value="Center" />
+                                                    Value="Center"/>
                                         </Style>
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
                                 <DataGridTextColumn Header="Model"
                                                     Binding="{Binding Model}"
-                                                    Width="444" />
+                                                    Width="444"/>
                             </DataGrid.Columns>
                         </DataGrid>
                     </Grid>
@@ -67,13 +67,13 @@
                             FontFamily="Source Sans Pro"
                             Height="60"
                             Width="544"
-                            Margin="0,10,0,0"
+                            Margin="0,5,0,0"
                             Foreground="Black"></Button>
                     <Grid Height="380"
                           Width="544">
                         <DataGrid x:Name="Models_Mode_2"
                                   AutoGenerateColumns="False"
-                                  FontSize="20"
+                                  FontSize="15"
                                   Foreground="Black"
                                   BorderBrush="Black"
                                   BorderThickness="1"
@@ -89,16 +89,16 @@
                                     <DataGridTextColumn.ElementStyle>
                                         <Style TargetType="{x:Type TextBlock}">
                                             <Setter Property="HorizontalAlignment"
-                                                    Value="Center" />
+                                                    Value="Center"/>
                                         </Style>
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
                                 <DataGridTextColumn Header="Model"
                                                     Binding="{Binding Model}"
-                                                    Width="222" />
+                                                    Width="222"/>
                                 <DataGridTextColumn Header="RotoID"
                                                     Binding="{Binding RotoID}"
-                                                    Width="222" />
+                                                    Width="222"/>
                             </DataGrid.Columns>
                         </DataGrid>
                     </Grid>
@@ -106,9 +106,9 @@
                         <StackPanel>
                             <StackPanel Orientation="Horizontal"
                                         HorizontalAlignment="Left"
-                                        Margin="0,10,0,0">
+                                        Margin="0,5,0,0">
                                 <StackPanel Orientation="Horizontal"
-                                            Margin="0,10,0,0">
+                                            Margin="0,5,0,0">
                                     <Label Content="Model:"
                                            FontSize="15"
                                            FontWeight="Bold"
@@ -122,7 +122,7 @@
                                              BorderBrush="Black"
                                              BorderThickness="1"
                                              Width="200"
-                                             Height="40"
+                                             Height="35"
                                              Margin="5,0,0,0"></TextBox>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal"
@@ -140,12 +140,12 @@
                                              BorderBrush="Black"
                                              BorderThickness="1"
                                              Width="200"
-                                             Height="40"
+                                             Height="35"
                                              Margin="5,0,0,0"></TextBox>
                                 </StackPanel>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal"
-                                        Margin="0,10,0,0">
+                                        Margin="0,5,0,0">
 
                                 <StackPanel Width="137.15">
                                     <Grid Height="65">
@@ -162,7 +162,7 @@
 
                                 </StackPanel>
                                 <StackPanel Width="137.15">
-                                    <Label Content="Tay Gắp X(mm)"
+                                    <Label Content="X(mm)"
                                            FontSize="12"
                                            Height="25"
                                            FontStyle="Normal"
@@ -173,7 +173,7 @@
                                     <TextBox Style="{StaticResource BlackCaretTextBoxStyle}"
                                              x:Name="txb_TGXStart2"
                                              Width="120"
-                                             Height="40"
+                                             Height="35"
                                              BorderBrush="Black"
                                              BorderThickness="1"
                                              VerticalContentAlignment="Center"
@@ -184,7 +184,7 @@
                                              FontFamily="Source Sans Pro"></TextBox>
                                 </StackPanel>
                                 <StackPanel Width="137.15">
-                                    <Label Content="Tay Gắp Z(mm)"
+                                    <Label Content="Z(mm)"
                                            FontSize="12"
                                            Height="25"
                                            FontStyle="Normal"
@@ -195,7 +195,7 @@
                                     <TextBox Style="{StaticResource BlackCaretTextBoxStyle}"
                                              x:Name="txb_TGZStart2"
                                              Width="120"
-                                             Height="40"
+                                             Height="35"
                                              BorderBrush="Black"
                                              BorderThickness="1"
                                              VerticalContentAlignment="Center"
@@ -217,7 +217,7 @@
                                     <Button Content="Set"
                                             x:Name="Set_Pos_Mode2"
                                             Width="120"
-                                            Height="40"
+                                            Height="35"
                                             Margin="1"
                                             HorizontalAlignment="Center"
                                             FontSize="20"
@@ -227,7 +227,7 @@
                                 </StackPanel>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal"
-                                        Margin="0,10,0,0">
+                                        Margin="0,5,0,0">
                                 <StackPanel Width="137.15">
                                     <Grid Height="65">
                                         <Label Content="Kích Thước Roto"
@@ -254,7 +254,7 @@
                                     <TextBox Style="{StaticResource BlackCaretTextBoxStyle}"
                                              x:Name="txb_LRoto2"
                                              Width="120"
-                                             Height="40"
+                                             Height="35"
                                              BorderBrush="Black"
                                              BorderThickness="1"
                                              VerticalContentAlignment="Center"
@@ -276,7 +276,7 @@
                                     <TextBox Style="{StaticResource BlackCaretTextBoxStyle}"
                                              x:Name="txb_DRoto2"
                                              Width="120"
-                                             Height="40"
+                                             Height="35"
                                              BorderBrush="Black"
                                              BorderThickness="1"
                                              VerticalContentAlignment="Center"
@@ -288,10 +288,10 @@
                                 </StackPanel>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal"
-                                        Margin="0,10,0,0">
+                                        Margin="0,5,0,0">
                                 <StackPanel Width="137.15">
                                     <Grid Height="65">
-                                        <Label Content="Bước Tiến"
+                                        <Label Content="Thông Số"
                                                Margin="0,20,0,0"
                                                FontSize="15"
                                                FontStyle="Normal"
@@ -304,7 +304,7 @@
 
                                 </StackPanel>
                                 <StackPanel Width="137.15">
-                                    <Label Content="mm/vòng"
+                                    <Label Content="Bước Tiến mm/vòng"
                                            FontSize="12"
                                            Height="25"
                                            FontStyle="Normal"
@@ -315,7 +315,7 @@
                                     <TextBox Style="{StaticResource BlackCaretTextBoxStyle}"
                                              x:Name="txb_Dis_Step2"
                                              Width="120"
-                                             Height="40"
+                                             Height="35"
                                              BorderBrush="Black"
                                              BorderThickness="1"
                                              VerticalContentAlignment="Center"
@@ -326,11 +326,43 @@
                                              FontFamily="Source Sans Pro"></TextBox>
                                 </StackPanel>
                                 <StackPanel Width="137.15">
-
+                                    <Label Content="Tốc Độ (Vòng/Phút)"
+                                           FontSize="12"
+                                           Height="25"
+                                           FontStyle="Normal"
+                                           FontWeight="Bold"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           FontFamily="Source Sans Pro"></Label>
+                                    <TextBox Style="{StaticResource BlackCaretTextBoxStyle}"
+                                             x:Name="txb_Speed_Step2"
+                                             Width="120"
+                                             Height="35"
+                                             BorderBrush="Black"
+                                             BorderThickness="1"
+                                             VerticalContentAlignment="Center"
+                                             HorizontalContentAlignment="Center"
+                                             HorizontalAlignment="Center"
+                                             FontSize="20"
+                                             FontStyle="Normal"
+                                             FontFamily="Source Sans Pro"></TextBox>
                                 </StackPanel>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal"
-                                        Margin="0,10,0,0">
+                                        Margin="0,5,0,0">
+                                <StackPanel Width="137.15">
+                                </StackPanel>
+                                <StackPanel Width="137.15">
+                                </StackPanel>
+                                <StackPanel Width="137.15">
+
+                                </StackPanel>
+                                <StackPanel Width="137.15">
+                                    <Grid Height="35"></Grid>
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal"
+                                        Margin="0,5,0,0">
                                 <StackPanel Width="137.15">
                                 </StackPanel>
                                 <StackPanel Width="137.15">
@@ -339,7 +371,7 @@
                                     <Button Content="Lưu"
                                             x:Name="bt_Save_Model2"
                                             Width="120"
-                                            Height="40"
+                                            Height="35"
                                             Margin="1"
                                             HorizontalAlignment="Center"
                                             FontSize="20"
@@ -351,7 +383,7 @@
                                     <Button Content="Xóa"
                                             x:Name="bt_Clear_Model2"
                                             Width="120"
-                                            Height="40"
+                                            Height="35"
                                             Margin="1"
                                             HorizontalAlignment="Center"
                                             FontSize="20"
@@ -377,13 +409,13 @@
                             FontFamily="Source Sans Pro"
                             Height="60"
                             Width="544"
-                            Margin="0,10,0,0"
+                            Margin="0,5,0,0"
                             Foreground="Black"></Button>
                     <Grid Height="380"
                           Width="544">
                         <DataGrid x:Name="Models_Mode_3"
                                   AutoGenerateColumns="False"
-                                  FontSize="20"
+                                  FontSize="15"
                                   Foreground="Black"
                                   BorderBrush="Black"
                                   BorderThickness="1"
@@ -399,16 +431,16 @@
                                     <DataGridTextColumn.ElementStyle>
                                         <Style TargetType="{x:Type TextBlock}">
                                             <Setter Property="HorizontalAlignment"
-                                                    Value="Center" />
+                                                    Value="Center"/>
                                         </Style>
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
                                 <DataGridTextColumn Header="Model"
                                                     Binding="{Binding Model}"
-                                                    Width="222" />
+                                                    Width="222"/>
                                 <DataGridTextColumn Header="RotoID"
                                                     Binding="{Binding RotoID}"
-                                                    Width="222" />
+                                                    Width="222"/>
                             </DataGrid.Columns>
                         </DataGrid>
                     </Grid>
@@ -416,9 +448,9 @@
                         <StackPanel>
                             <StackPanel Orientation="Horizontal"
                                         HorizontalAlignment="Left"
-                                        Margin="0,10,0,0">
+                                        Margin="0,5,0,0">
                                 <StackPanel Orientation="Horizontal"
-                                            Margin="0,10,0,0">
+                                            Margin="0,5,0,0">
                                     <Label Content="Model:"
                                            FontSize="15"
                                            FontWeight="Bold"
@@ -432,7 +464,7 @@
                                              BorderBrush="Black"
                                              BorderThickness="1"
                                              Width="200"
-                                             Height="40"
+                                             Height="35"
                                              Margin="5,0,0,0"></TextBox>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal"
@@ -450,12 +482,12 @@
                                              BorderBrush="Black"
                                              BorderThickness="1"
                                              Width="200"
-                                             Height="40"
+                                             Height="35"
                                              Margin="5,0,0,0"></TextBox>
                                 </StackPanel>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal"
-                                        Margin="0,10,0,0">
+                                        Margin="0,5,0,0">
 
                                 <StackPanel Width="137.15">
                                     <Grid Height="65">
@@ -483,7 +515,7 @@
                                     <TextBox Style="{StaticResource BlackCaretTextBoxStyle}"
                                              x:Name="txb_BaseXStart3"
                                              Width="120"
-                                             Height="40"
+                                             Height="35"
                                              BorderBrush="Black"
                                              BorderThickness="1"
                                              VerticalContentAlignment="Center"
@@ -505,7 +537,7 @@
                                     <TextBox Style="{StaticResource BlackCaretTextBoxStyle}"
                                              x:Name="txb_BaseYStart3"
                                              Width="120"
-                                             Height="40"
+                                             Height="35"
                                              BorderBrush="Black"
                                              BorderThickness="1"
                                              VerticalContentAlignment="Center"
@@ -527,7 +559,7 @@
                                     <Button Content="Set"
                                             x:Name="Set_Pos_Mode3"
                                             Width="120"
-                                            Height="40"
+                                            Height="35"
                                             Margin="1"
                                             HorizontalAlignment="Center"
                                             FontSize="20"
@@ -537,18 +569,23 @@
                                 </StackPanel>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal"
-                                        Margin="0,10,0,0">
+                                        Margin="0,5,0,0">
                                 <StackPanel Width="137.15">
                                     <Grid Height="65">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="40*"/>
+                                            <ColumnDefinition Width="97*"/>
+                                        </Grid.ColumnDefinitions>
                                         <Label Content="Kích Thước Roto"
-                                               Margin="0,20,0,0"
+                                               Margin="6,30,0,0"
                                                FontSize="15"
                                                FontStyle="Normal"
                                                FontWeight="Bold"
                                                FontFamily="Source Sans Pro"
                                                Foreground="Black"
-                                               HorizontalAlignment="Center"
-                                               VerticalAlignment="Center"></Label>
+                                               HorizontalAlignment="Left"
+                                               VerticalAlignment="Top"
+                                                Grid.ColumnSpan="2"></Label>
                                     </Grid>
 
                                 </StackPanel>
@@ -564,7 +601,7 @@
                                     <TextBox Style="{StaticResource BlackCaretTextBoxStyle}"
                                              x:Name="txb_LRoto3"
                                              Width="120"
-                                             Height="40"
+                                             Height="35"
                                              BorderBrush="Black"
                                              BorderThickness="1"
                                              VerticalContentAlignment="Center"
@@ -586,7 +623,7 @@
                                     <TextBox Style="{StaticResource BlackCaretTextBoxStyle}"
                                              x:Name="txb_DRoto3"
                                              Width="120"
-                                             Height="40"
+                                             Height="35"
                                              BorderBrush="Black"
                                              BorderThickness="1"
                                              VerticalContentAlignment="Center"
@@ -598,10 +635,10 @@
                                 </StackPanel>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal"
-                                        Margin="0,10,0,0">
+                                        Margin="0,5,0,0">
                                 <StackPanel Width="137.15">
                                     <Grid Height="65">
-                                        <Label Content="Bước Tiến"
+                                        <Label Content="OF Hàn"
                                                Margin="0,20,0,0"
                                                FontSize="15"
                                                FontStyle="Normal"
@@ -614,7 +651,77 @@
 
                                 </StackPanel>
                                 <StackPanel Width="137.15">
-                                    <Label Content="mm/vòng"
+                                    <Label Content="X Base (mm)"
+                                           FontSize="12"
+                                           Height="25"
+                                           FontStyle="Normal"
+                                           FontWeight="Bold"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           FontFamily="Source Sans Pro"></Label>
+                                    <TextBox Style="{StaticResource BlackCaretTextBoxStyle}"
+                                             x:Name="txb_XBase_OF_Han"
+                                             Width="120"
+                                             Height="35"
+                                             BorderBrush="Black"
+                                             BorderThickness="1"
+                                             VerticalContentAlignment="Center"
+                                             HorizontalContentAlignment="Center"
+                                             HorizontalAlignment="Center"
+                                             FontSize="20"
+                                             FontStyle="Normal"
+                                             FontFamily="Source Sans Pro"></TextBox>
+                                </StackPanel>
+                                <StackPanel Width="137.15">
+                                    <Label Content="Xoay (Vòng)"
+                                           FontSize="12"
+                                           Height="25"
+                                           FontStyle="Normal"
+                                           FontWeight="Bold"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           FontFamily="Source Sans Pro"></Label>
+                                    <TextBox Style="{StaticResource BlackCaretTextBoxStyle}"
+                                             x:Name="txb_Rotate_OF_Han"
+                                             Width="120"
+                                             Height="35"
+                                             BorderBrush="Black"
+                                             BorderThickness="1"
+                                             VerticalContentAlignment="Center"
+                                             HorizontalContentAlignment="Center"
+                                             FontSize="20"
+                                             FontStyle="Normal"
+                                             FontFamily="Source Sans Pro"/>
+                                </StackPanel>
+
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal"
+                                        Margin="0,5,0,0">
+                                <StackPanel Width="68"></StackPanel>
+                                <StackPanel Width="137.15">
+                                    <Label Content="Số Vòng Quay"
+                                           FontSize="12"
+                                           Height="25"
+                                           FontStyle="Normal"
+                                           FontWeight="Bold"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           FontFamily="Source Sans Pro"></Label>
+                                    <TextBox Style="{StaticResource BlackCaretTextBoxStyle}"
+                                             x:Name="txb_SoVongQuay"
+                                             Width="120"
+                                             Height="35"
+                                             BorderBrush="Black"
+                                             BorderThickness="1"
+                                             VerticalContentAlignment="Center"
+                                             HorizontalContentAlignment="Center"
+                                             HorizontalAlignment="Center"
+                                             FontSize="20"
+                                             FontStyle="Normal"
+                                             FontFamily="Source Sans Pro"></TextBox>
+                                </StackPanel>
+                                <StackPanel Width="137.15">
+                                    <Label Content="Bước Tiến mm/vòng"
                                            FontSize="12"
                                            Height="25"
                                            FontStyle="Normal"
@@ -625,7 +732,7 @@
                                     <TextBox Style="{StaticResource BlackCaretTextBoxStyle}"
                                              x:Name="txb_Dis_Step3"
                                              Width="120"
-                                             Height="40"
+                                             Height="35"
                                              BorderBrush="Black"
                                              BorderThickness="1"
                                              VerticalContentAlignment="Center"
@@ -647,19 +754,20 @@
                                     <TextBox Style="{StaticResource BlackCaretTextBoxStyle}"
                                              x:Name="txb_F_D3"
                                              Width="120"
-                                             Height="40"
+                                             Height="35"
                                              BorderBrush="Black"
                                              BorderThickness="1"
                                              VerticalContentAlignment="Center"
                                              HorizontalContentAlignment="Center"
                                              FontSize="20"
                                              FontStyle="Normal"
-                                             FontFamily="Source Sans Pro" />
+                                             FontFamily="Source Sans Pro"/>
                                 </StackPanel>
-                                
+
                             </StackPanel>
+
                             <StackPanel Orientation="Horizontal"
-                                        Margin="0,10,0,0">
+                                        Margin="0,5,0,0">
                                 <StackPanel Width="137.15">
                                 </StackPanel>
                                 <StackPanel Width="137.15">
@@ -668,7 +776,7 @@
                                     <Button Content="Lưu"
                                             x:Name="bt_Save_Model3"
                                             Width="120"
-                                            Height="40"
+                                            Height="35"
                                             Margin="1"
                                             HorizontalAlignment="Center"
                                             FontSize="20"
@@ -680,7 +788,7 @@
                                     <Button Content="Xóa"
                                             x:Name="bt_Clear_Model3"
                                             Width="120"
-                                            Height="40"
+                                            Height="35"
                                             Margin="1"
                                             HorizontalAlignment="Center"
                                             FontSize="20"

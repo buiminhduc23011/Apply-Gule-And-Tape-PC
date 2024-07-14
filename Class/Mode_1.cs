@@ -938,7 +938,7 @@ namespace Apply_Gule_And_Tape_PC.Class
                     double bufY = yValue;
                     double bufZ = zValue;
                     uint Buf_Status = 0;
-                
+                   //MessageBox.Show(bufX.ToString() + " " +bufY.ToString() + " " + bufZ.ToString());
 
                     // Set the properties based on the counter
                     switch (i)
@@ -1547,8 +1547,9 @@ namespace Apply_Gule_And_Tape_PC.Class
 
                     }
                 }
-                return JsonConvert.SerializeObject(data);
-
+            //MessageBox.Show(JsonConvert.SerializeObject(data));
+            return JsonConvert.SerializeObject(data);
+            
 
             }
         }

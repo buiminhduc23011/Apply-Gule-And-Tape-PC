@@ -85,6 +85,8 @@ namespace Apply_Gule_And_Tape_PC.Class
         public static bool OFF_Cyl_Weld { get; set; }
         public static bool ON_Cyl_Press { get; set; }
         public static bool OFF_Cyl_Press { get; set; }
+        public static bool ON_Cyl_Press_2 { get; set; }
+        public static bool OFF_Cyl_Press_2 { get; set; }
         public static bool ON_Cyl_Center { get; set; }
         public static bool OFF_Cyl_Center { get; set; }
 
@@ -106,6 +108,8 @@ namespace Apply_Gule_And_Tape_PC.Class
         public static double J2_X_Of { get; set; }
         public static double J2_Y_Of { get; set; }
         public static double J2_Z_Of { get; set; }
+        //Para
+        public static bool Off_Buzzer { get; set; }
     }
 
 

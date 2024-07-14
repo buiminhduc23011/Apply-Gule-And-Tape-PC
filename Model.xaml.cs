@@ -122,6 +122,7 @@ namespace Apply_Gule_And_Tape_PC
                             txb_DRoto2.Text = (string)obj["D_Roto"];
                             txb_LRoto2.Text = (string)obj["L_Roto"];
                             txb_Dis_Step2.Text = (string)obj["Dis_Step"];
+                            txb_Speed_Step2.Text = (string)obj["Speed"];
                         }
                     }
                 }
@@ -151,6 +152,9 @@ namespace Apply_Gule_And_Tape_PC
                             txb_LRoto3.Text = (string)obj["L_Roto"];
                             txb_Dis_Step3.Text = (string)obj["Dis_Step"];
                             txb_F_D3.Text =  (string)obj["F_D"];
+                            txb_SoVongQuay.Text = (string)obj["K"];
+                            txb_XBase_OF_Han.Text = string.Format("{0:F3}", (double)obj["OF_Xbase"]);
+                            txb_Rotate_OF_Han.Text = string.Format("{0:F3}", (double)obj["OF_Rotate"]);
                         }
                     }
                 }
@@ -162,56 +166,66 @@ namespace Apply_Gule_And_Tape_PC
         }
         private void Save_Model2()
         {
-            List_Model_Mode2 List_Model2 = new List_Model_Mode2();
-            List_Model2.Model = txb_ModelID2.Text;
-            List_Model2.Code = txb_RotoID2.Text;
-            List_Model2.Pos_X_Start = float.Parse(txb_TGXStart2.Text);
-            List_Model2.Pos_Z_Start = float.Parse(txb_TGZStart2.Text);
-            List_Model2.D_Roto = float.Parse(txb_DRoto2.Text);
-            List_Model2.L_Roto = float.Parse(txb_LRoto2.Text);
-            List_Model2.Dis_Step = float.Parse(txb_Dis_Step2.Text);
-            string list_Model2_Json = JsonConvert.SerializeObject(List_Model2);
-            try
+            if(float.Parse(txb_Speed_Step2.Text)>=3 && float.Parse(txb_Speed_Step2.Text) <=20)
             {
-                string json = File.ReadAllText(linkpath.Mode2);
-                var options = new JsonSerializerOptions { ReadCommentHandling = JsonCommentHandling.Skip };
-                var data = System.Text.Json.JsonSerializer.Deserialize<List_Model_Mode2_Temp[]>(json, options);
-                float flag = 0;
-                foreach (var item in data)
+                List_Model_Mode2 List_Model2 = new List_Model_Mode2();
+                List_Model2.Model = txb_ModelID2.Text;
+                List_Model2.Code = txb_RotoID2.Text;
+                List_Model2.Pos_X_Start = float.Parse(txb_TGXStart2.Text);
+                List_Model2.Pos_Z_Start = float.Parse(txb_TGZStart2.Text);
+                List_Model2.D_Roto = float.Parse(txb_DRoto2.Text);
+                List_Model2.L_Roto = float.Parse(txb_LRoto2.Text);
+                List_Model2.Dis_Step = float.Parse(txb_Dis_Step2.Text);
+                List_Model2.Speed = float.Parse(txb_Speed_Step2.Text);
+                string list_Model2_Json = JsonConvert.SerializeObject(List_Model2);
+                try
                 {
-                    if (item.Model == txb_ModelID2.Text || item.Code == txb_RotoID2.Text)
+                    string json = File.ReadAllText(linkpath.Mode2);
+                    var options = new JsonSerializerOptions { ReadCommentHandling = JsonCommentHandling.Skip };
+                    var data = System.Text.Json.JsonSerializer.Deserialize<List_Model_Mode2_Temp[]>(json, options);
+                    float flag = 0;
+                    foreach (var item in data)
                     {
-                        item.Model = txb_ModelID2.Text;
-                        item.Code = txb_RotoID2.Text;
-                        item.Pos_X_Start = float.Parse(txb_TGXStart2.Text);
-                        item.Pos_Z_Start = float.Parse(txb_TGZStart2.Text);
-                        item.D_Roto = float.Parse(txb_DRoto2.Text);
-                        item.L_Roto = float.Parse(txb_LRoto2.Text);
-                        item.Dis_Step = float.Parse(txb_Dis_Step2.Text);
-                        var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
-                        string newJsonString = System.Text.Json.JsonSerializer.Serialize(data, jsonOptions);
-                        File.WriteAllText(linkpath.Mode2, newJsonString);
-                        MessageBox.Show("Đã Lưu Thành Công");
-                        flag = 1;
-                        break;
+                        if (item.Model == txb_ModelID2.Text || item.Code == txb_RotoID2.Text)
+                        {
+                            item.Model = txb_ModelID2.Text;
+                            item.Code = txb_RotoID2.Text;
+                            item.Pos_X_Start = float.Parse(txb_TGXStart2.Text);
+                            item.Pos_Z_Start = float.Parse(txb_TGZStart2.Text);
+                            item.D_Roto = float.Parse(txb_DRoto2.Text);
+                            item.L_Roto = float.Parse(txb_LRoto2.Text);
+                            item.Dis_Step = float.Parse(txb_Dis_Step2.Text);
+                            item.Speed = float.Parse(txb_Speed_Step2.Text);
+                            var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
+                            string newJsonString = System.Text.Json.JsonSerializer.Serialize(data, jsonOptions);
+                            File.WriteAllText(linkpath.Mode2, newJsonString);
+                            MessageBox.Show("Đã Lưu Thành Công");
+                            flag = 1;
+                            break;
+                        }
+                    }
+                    if (flag == 0)
+                    {
+                        json = json.Remove(json.Length - 1);
+                        json = json + "," + list_Model2_Json + "]";
+                        File.WriteAllText(linkpath.Mode2, json);
+                        MessageBox.Show("Đã Lưu Và Tạo Model Mới Thành Công");
                     }
                 }
-                if (flag == 0)
+                catch
                 {
-                    json = json.Remove(json.Length - 1);
-                    json = json + "," + list_Model2_Json + "]";
-                    File.WriteAllText(linkpath.Mode2, json);
+                    string json_;
+                    json_ = "[" + list_Model2_Json + "]";
+                    File.WriteAllText(linkpath.Mode2, json_);
                     MessageBox.Show("Đã Lưu Và Tạo Model Mới Thành Công");
                 }
-            }
-            catch
+                Common.Load_View_Mode2(Models_Mode_2);
+            }    
+            else
             {
-                string json_;
-                json_ = "[" + list_Model2_Json + "]";
-                File.WriteAllText(linkpath.Mode2, json_);
-                MessageBox.Show("Đã Lưu Và Tạo Model Mới Thành Công");
-            }
-            Common.Load_View_Mode2(Models_Mode_2);
+                MessageBox.Show("Giá trị tốc độ không phù hợp, giá trị hợp lệ trong khoảng 3-20");
+            }    
+           
         }
         private void Save_Model3()
         {
@@ -224,6 +238,9 @@ namespace Apply_Gule_And_Tape_PC
             List_Model3.L_Roto = float.Parse(txb_LRoto3.Text);
             List_Model3.Dis_Step = float.Parse(txb_Dis_Step3.Text);
             List_Model3.F_D = float.Parse(txb_F_D3.Text);
+            List_Model3.K = float.Parse(txb_SoVongQuay.Text);
+            List_Model3.OF_Xbase = float.Parse(txb_XBase_OF_Han.Text);
+            List_Model3.OF_Rotate = float.Parse(txb_XBase_OF_Han.Text);
             string list_Model3_Json = JsonConvert.SerializeObject(List_Model3);
             try
             {
@@ -243,6 +260,9 @@ namespace Apply_Gule_And_Tape_PC
                         item.L_Roto = float.Parse(txb_LRoto3.Text);
                         item.Dis_Step = float.Parse(txb_Dis_Step3.Text);
                         item.F_D = float.Parse(txb_F_D3.Text);
+                        item.K = float.Parse(txb_SoVongQuay.Text);
+                        item.OF_Xbase = float.Parse(txb_XBase_OF_Han.Text);
+                        item.OF_Rotate = float.Parse(txb_Rotate_OF_Han.Text);
                         var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
                         string newJsonString = System.Text.Json.JsonSerializer.Serialize(data, jsonOptions);
                         File.WriteAllText(linkpath.Mode3, newJsonString);

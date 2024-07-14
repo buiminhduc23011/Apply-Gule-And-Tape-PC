@@ -22,6 +22,9 @@ namespace Apply_Gule_And_Tape_PC.Class
         public float L_Roto { get; set; }
         public float Dis_Step { get; set; }
         public float F_D { get; set; }
+        public float K {  get; set; } // Số vòng quay thêm ở cuối
+        public float OF_Xbase { get; set; } // Quay lại vị trí hàn
+        public float OF_Rotate { get; set; } // Quay thêm để đúng điểm hàn
     }
     public class List_Model_Mode3_Temp
     {
@@ -33,6 +36,9 @@ namespace Apply_Gule_And_Tape_PC.Class
         public float L_Roto { get; set; }
         public float Dis_Step { get; set; }
         public float F_D { get; set; }
+        public float K { get; set; } // Số vòng quay thêm ở cuối
+        public float OF_Xbase { get; set; } // Quay lại vị trí hàn
+        public float OF_Rotate { get; set; } // Quay thêm để đúng điểm hàn
     }
     public class Mode_3
     {

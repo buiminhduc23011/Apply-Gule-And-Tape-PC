@@ -11,6 +11,7 @@ using System.IO;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.IO.Ports;
+using System.Windows.Controls.Primitives;
 
 namespace Apply_Gule_And_Tape_PC
 {
@@ -21,7 +22,9 @@ namespace Apply_Gule_And_Tape_PC
     {
         Common Common = new Common();
         Link_Path path = new Link_Path();
-        string Ip_Port_Host;
+        private DispatcherTimer timer;
+        Update_Screen ud = new Update_Screen();
+        PLC plc = new PLC();
         public Setting()
         {
             InitializeComponent();
@@ -31,6 +34,10 @@ namespace Apply_Gule_And_Tape_PC
         }
         private void Setting_Loaded(object sender, RoutedEventArgs e)
         {
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromMilliseconds(100);
+            timer.Tick += Timer_Tick;
+            timer.Start();
             foreach (var button in Common.FindVisualChildren<Button>(this))
             {
                 button.Click += Button_Click;
@@ -50,7 +57,24 @@ namespace Apply_Gule_And_Tape_PC
         }
         private void Setting_Unloaded(object sender, RoutedEventArgs e)
         {
-            
+            timer.Stop();
+        }
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                Dispatcher.Invoke(() =>
+                {
+                    Update_Screen();
+                });
+            }
+            catch
+            {
+            }
+        }
+        private void Update_Screen()
+        {
+            ud.bt_Blue(bt_Off_Buzzer, Data.Off_Buzzer, false);
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -75,6 +99,16 @@ namespace Apply_Gule_And_Tape_PC
             {
 
             }
+        }
+
+        private void bt_Off_Buzzer_Click(object sender, RoutedEventArgs e)
+        {
+            var data = new
+            {
+                Off_Buzzer = !Data.Off_Buzzer,
+            };
+            string jsonData = JsonConvert.SerializeObject(data);
+            plc.Write(jsonData);
         }
     }
 }

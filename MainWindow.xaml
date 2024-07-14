@@ -242,7 +242,7 @@
                         </StackPanel>
 
                     </Grid>
-                    <Grid Margin="0,0,0,0">
+                    <Grid Margin="-8,0,0,0">
 
                         <Border BorderBrush="#1f1f1f"
                                 BorderThickness="2"
@@ -267,7 +267,7 @@
                                                     <StackPanel Orientation="Horizontal">
                                                         <Grid Width="155.5">
                                                             <StackPanel>
-                                                                <Label Content="Vị Trí Tay Gắp Trục X"
+                                                                <Label Content="Vị Trí Trục X"
                                                                        FontSize="12"
                                                                        Height="25"
                                                                        FontStyle="Normal"
@@ -291,7 +291,7 @@
                                                         </Grid>
                                                         <Grid Width="155.5">
                                                             <StackPanel>
-                                                                <Label Content="Vị Trí Tay Gắp Trục Y"
+                                                                <Label Content="Vị Trí Trục Y"
                                                                        FontSize="12"
                                                                        Height="25"
                                                                        FontStyle="Normal"
@@ -315,7 +315,7 @@
                                                         </Grid>
                                                         <Grid Width="155.5">
                                                             <StackPanel>
-                                                                <Label Content="Vị Trí Tay Gắp Trục Z"
+                                                                <Label Content="Vị Trí Trục Z"
                                                                        FontSize="12"
                                                                        Height="25"
                                                                        FontStyle="Normal"
@@ -506,7 +506,7 @@
                                                                    FontWeight="Bold"
                                                                    FontFamily="Source Sans Pro"
                                                                    HorizontalAlignment="Center"
-                                                                   VerticalAlignment="Center" />
+                                                                   VerticalAlignment="Bottom" />
                                                         </Grid>
 
                                                     </StackPanel>

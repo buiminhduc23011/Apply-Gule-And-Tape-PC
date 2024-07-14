@@ -29,7 +29,7 @@ namespace Apply_Gule_And_Tape_PC.Class
 
         public void StartTimer()
         {
-            timer = new System.Threading.Timer(Timer_Tick, null, 0, 100);
+            timer = new System.Threading.Timer(Timer_Tick, null, 0, 200);
             string json = File.ReadAllText(path.Setting);
             var data_Setting = System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, string>>(json);
             PLC_Read = data_Setting["PLC_Read"];
@@ -66,12 +66,10 @@ namespace Apply_Gule_And_Tape_PC.Class
                     }
                     Flag_PLC = 0;
                 }
-                
             }
             catch
             {
                 Flag_PLC++;
-                
             }
         }
 
@@ -154,6 +152,8 @@ namespace Apply_Gule_And_Tape_PC.Class
                 Data.OFF_Cyl_Weld = data.OFF_Cyl_Weld;
                 Data.ON_Cyl_Press = data.ON_Cyl_Press;
                 Data.OFF_Cyl_Press = data.OFF_Cyl_Press;
+                Data.ON_Cyl_Press_2 = data.ON_Cyl_Press_2;
+                Data.OFF_Cyl_Press_2 = data.OFF_Cyl_Press_2;
                 Data.ON_Cyl_Center = data.ON_Cyl_Center;
                 Data.OFF_Cyl_Center = data.OFF_Cyl_Center;
 
@@ -169,13 +169,15 @@ namespace Apply_Gule_And_Tape_PC.Class
                 Data.ON_Mode2 = data.ON_Mode2;
                 //Mode2
                 Data.ON_Mode3 = data.ON_Mode3;
-                //
+                //Para
                 Data.J1_X_Of = data.J1_X_Of;
                 Data.J1_Y_Of = data.J1_Y_Of;
                 Data.J1_Z_Of = data.J1_Z_Of;
                 Data.J2_X_Of = data.J2_X_Of;
                 Data.J2_Y_Of = data.J2_Y_Of;
                 Data.J2_Z_Of = data.J2_Z_Of;
+                //
+                Data.Off_Buzzer = data.Off_Buzzer;
             }
             catch (Exception e)
             {

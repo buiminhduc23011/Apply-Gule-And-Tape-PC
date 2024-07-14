@@ -117,6 +117,8 @@ namespace Apply_Gule_And_Tape_PC
             ud.bt_Blue(OFF_Cyl_Weld, Data.ON_Cyl_Weld, true);
             ud.bt_Blue(ON_Cyl_Press, Data.ON_Cyl_Press, false);
             ud.bt_Blue(OFF_Cyl_Press, Data.ON_Cyl_Press, true);
+            ud.bt_Blue(ON_Cyl_Press_2, Data.ON_Cyl_Press_2, false);
+            ud.bt_Blue(OFF_Cyl_Press_2, Data.ON_Cyl_Press_2, true);
             ud.bt_Blue(ON_Cyl_Center, Data.ON_Cyl_Center, false);
             ud.bt_Blue(OFF_Cyl_Center, Data.ON_Cyl_Center, true);
 
@@ -266,6 +268,7 @@ namespace Apply_Gule_And_Tape_PC
         {
             return input.Contains(Compari_1) || input.Contains(Compari_2);
         }
+
     }
 
 }

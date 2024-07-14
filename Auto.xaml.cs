@@ -108,6 +108,13 @@ namespace Apply_Gule_And_Tape_PC
                 {
                     var data = selectedRow.Model;
                     txb_IDcode_Mode1.Text = data.ToString().Replace(".txt", string.Empty);
+                    var data_send = new
+                    {
+                        M1_Jig1 = false,
+                        M1_Jig2 = false,
+                    };
+                    string jsonData = JsonConvert.SerializeObject(data_send);
+                    plc.Write(jsonData);
                 }
             }
             if (gridName == "list_Mode2")
@@ -141,8 +148,6 @@ namespace Apply_Gule_And_Tape_PC
                 {
                     if (Data.M1_Req == true && flag == false)
                     {
-
-                        //MessageBox.Show(Mode_1.Parse_Data(programListBox, 100, processingCounter));
                         processingCounter += 1;
                         plc.Write(Mode_1.Parse_Data(programListBox, 100, processingCounter));
                         flag = true;
@@ -213,9 +218,6 @@ namespace Apply_Gule_And_Tape_PC
                 MessageBox.Show(ex.ToString());
             }
         }
-
-
-
         private IEnumerable<T> FindVisualChildren<T>(DependencyObject parent) where T : DependencyObject
         {
             for (int i = 0; i < VisualTreeHelper.GetChildrenCount(parent); i++)
@@ -328,9 +330,10 @@ namespace Apply_Gule_And_Tape_PC
                         programListBox.Items[i] = inputString;
                     }
                     int x = programListBox.Items.Count;
-                    // ListBoxItem listBoxItem_ = new ListBoxItem();
-                    //listBoxItem_.Content = "G00 X" + Data.J2_X_Of.ToString() + " Y" + Data.J2_Y_Of.ToString() + " Z" + Data.J2_Z_Of.ToString();
-                    // programListBox.Items.Add(listBoxItem_);
+                    // Insert Pos Origin Jig 2
+                    ListBoxItem listBoxItem_ = new ListBoxItem();
+                    listBoxItem_.Content = "G00 X" + Data.J2_X_Of.ToString() + " Y" + Data.J2_Y_Of.ToString() + " Z" + "0.0";
+                    programListBox.Items.Add(listBoxItem_);
                     for (int i = 0; i < x; i++)
                     {
                         string prefixToRemove = "System.Windows.Controls.ListBoxItem: ";
@@ -431,7 +434,7 @@ namespace Apply_Gule_And_Tape_PC
                     }
                     int x = programListBox.Items.Count;
                     ListBoxItem listBoxItem_ = new ListBoxItem();
-                    listBoxItem_.Content = "G00 X" + Data.J2_X_Of.ToString() + " Y" + Data.J2_Y_Of.ToString() + " Z" + Data.J2_Z_Of.ToString();
+                    listBoxItem_.Content = "G00 X" + Data.J2_X_Of.ToString() + " Y" + Data.J2_Y_Of.ToString() + " Z" + "0.0";
                     programListBox.Items.Add(listBoxItem_);
                     for (int i = 0; i < x; i++)
                     {
@@ -538,6 +541,7 @@ namespace Apply_Gule_And_Tape_PC
                     M2_LRoto.Text = "";
                     M2_DRoto.Text = "";
                     M2_Dis_Step.Text = "";
+                    M2_Speed_Step.Text = "";
                 }
 
             }
@@ -555,6 +559,8 @@ namespace Apply_Gule_And_Tape_PC
                     M3_DRoto.Text = "";
                     M3_Dis_Step.Text = "";
                     M3_F_D.Text = "";
+                    txb_XBase_OF_Han.Text = "";
+                    txb_Rotate_OF_Han.Text = "";
                 }    
             }
         }
@@ -614,6 +620,7 @@ namespace Apply_Gule_And_Tape_PC
                             M2_LRoto.Text = (string)obj["L_Roto"];
                             M2_DRoto.Text = (string)obj["D_Roto"];
                             M2_Dis_Step.Text = (string)obj["Dis_Step"];
+                            M2_Speed_Step.Text = (string)obj["Speed"];
                         }
                     }
                 }
@@ -641,6 +648,9 @@ namespace Apply_Gule_And_Tape_PC
                             M3_DRoto.Text = (string)obj["D_Roto"];
                             M3_Dis_Step.Text = (string)obj["Dis_Step"];
                             M3_F_D.Text = (string)obj["F_D"];
+                            txb_N_Rotate.Text = (string)obj["K"];
+                            txb_XBase_OF_Han.Text = string.Format("{0:F3}", (double)obj["OF_Xbase"]);
+                            txb_Rotate_OF_Han.Text = string.Format("{0:F3}", (double)obj["OF_Rotate"]);
                         }
                     }
                 }
@@ -653,7 +663,8 @@ namespace Apply_Gule_And_Tape_PC
 
         private void bt_Mode1_Click(object sender, RoutedEventArgs e)
         {
-            if(PLC.IsConnected)
+           // Mode_1.Parse_Data(programListBox, 100, 1);
+            if (PLC.IsConnected)
             {
                 if (txb_IDcode_Mode1.Text != "")
                 {
@@ -767,6 +778,7 @@ namespace Apply_Gule_And_Tape_PC
                                 M2_L_Roto = float.Parse(M2_LRoto.Text),
                                 M2_D_Roto = float.Parse(M2_DRoto.Text),
                                 M2_Dis_Step = float.Parse(M2_Dis_Step.Text),
+                                M2_Speed = float.Parse(M2_Speed_Step.Text),
                                 ON_Mode2 = true,
                             };
                             string Send = JsonConvert.SerializeObject(data);
@@ -811,6 +823,9 @@ namespace Apply_Gule_And_Tape_PC
                                 M3_D_Roto = float.Parse(M3_DRoto.Text),
                                 M3_Dis_Step = float.Parse(M3_Dis_Step.Text),
                                 M3_F_D = float.Parse(M3_F_D.Text),
+                                N_Rotate = float.Parse(txb_N_Rotate.Text),
+                                OF_Xbase = float.Parse(txb_XBase_OF_Han.Text),
+                                OF_Rotate = float.Parse(txb_Rotate_OF_Han.Text),
                                 ON_Mode3 = true,
                             };
                             string Send = JsonConvert.SerializeObject(data);

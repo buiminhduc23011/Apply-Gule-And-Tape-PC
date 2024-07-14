@@ -51,8 +51,8 @@
     <system:String x:Key="I57">---</system:String>
     <system:String x:Key="I60">SS1 XL Hàn</system:String>
     <system:String x:Key="I61">SS2 XL Hàn</system:String>
-    <system:String x:Key="I62">SS1 XL Tỳ</system:String>
-    <system:String x:Key="I63">SS2 XL Tỳ</system:String>
+    <system:String x:Key="I62">SS1 XL Tỳ 1</system:String>
+    <system:String x:Key="I63">SS2 XL Tỳ 1</system:String>
     <system:String x:Key="I64">SS1 XL Cut</system:String>
     <system:String x:Key="I65">SS2 XL Cut</system:String>
     <system:String x:Key="I66">SS1 XL CT</system:String>
@@ -61,8 +61,8 @@
     <system:String x:Key="I71">Light Curtain</system:String>
     <system:String x:Key="I72">Spare</system:String>
     <system:String x:Key="I73">Spare</system:String>
-    <system:String x:Key="I74">Spare</system:String>
-    <system:String x:Key="I75">Spare</system:String>
+    <system:String x:Key="I74">SS1 XL Tỳ 2</system:String>
+    <system:String x:Key="I75">SS2 XL Tỳ 2</system:String>
     <system:String x:Key="I76">Spare</system:String>
     <system:String x:Key="I77">Spare</system:String>
     <system:String x:Key="Q00">Pul X</system:String>
@@ -122,10 +122,10 @@
     <system:String x:Key="Q65">RST Phanh</system:String>
     <system:String x:Key="Q66">ON Cut</system:String>
     <system:String x:Key="Q67">ON XL Hàn</system:String>
-    <system:String x:Key="Q70">ON XL Tỳ</system:String>
+    <system:String x:Key="Q70">ON XL Tỳ 1</system:String>
     <system:String x:Key="Q71">ON XL Cut</system:String>
     <system:String x:Key="Q72">ON XL CT</system:String>
-    <system:String x:Key="Q73">RL27 Spare</system:String>
+    <system:String x:Key="Q73">ON XL Tỳ 2</system:String>
     <system:String x:Key="Q74">RL28 Spare</system:String>
     <system:String x:Key="Q75">RL29 Spare</system:String>
     <system:String x:Key="Q76">RL30 Spare</system:String>

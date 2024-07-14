@@ -258,11 +258,10 @@ namespace Apply_Gule_And_Tape_PC
         }
         private void LogoutTimer_Tick(object sender, EventArgs e)
         {
-            // Kiểm tra thời gian không hoạt động và thực hiện đăng xuất tự động.
             TimeSpan idleTime = DateTime.Now - lastActivityTime;
             if (idleTime >= TimeSpan.FromMinutes(10))
             {
-                Logout();
+                //Logout();
             }
         }
         private void Login()

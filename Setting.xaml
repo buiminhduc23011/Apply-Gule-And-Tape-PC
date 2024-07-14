@@ -14,7 +14,20 @@
                   VerticalAlignment="Top">
                 <Border BorderThickness="1"
                         BorderBrush="Black"></Border>
-                
+                <StackPanel>
+                    <Label Content="PLC"
+       FontSize="30"
+       FontStyle="Normal"
+       FontWeight="Bold"
+       FontFamily="Source Sans Pro"
+       HorizontalAlignment="Center"
+       VerticalAlignment="Center"></Label>
+                    <Button Content="Tắt Còi"
+                            
+        x:Name="bt_Off_Buzzer"
+        Height="50"
+        Width="100" Click="bt_Off_Buzzer_Click"/>
+                </StackPanel>
             </Grid>
             <Grid Width="822.5"
                   Height="845"

@@ -21,6 +21,7 @@ namespace Apply_Gule_And_Tape_PC.Class
         public float D_Roto { get; set; }
         public float L_Roto { get; set; }
         public float Dis_Step { get; set; }
+        public float Speed { get;set; }
     }
     public class List_Model_Mode2_Temp
     {
@@ -31,6 +32,7 @@ namespace Apply_Gule_And_Tape_PC.Class
         public float D_Roto { get; set; }
         public float L_Roto { get; set; }
         public float Dis_Step { get; set; }
+        public float Speed { get; set; }
     }
 
     public static class Mode_2
