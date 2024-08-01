@@ -650,6 +650,7 @@ namespace Apply_Gule_And_Tape_PC
                             M3_F_D.Text = (string)obj["F_D"];
                             txb_N_Rotate.Text = (string)obj["K"];
                             txb_XBase_OF_Han.Text = string.Format("{0:F3}", (double)obj["OF_Xbase"]);
+                            txb_YBase_OF_Han.Text = string.Format("{0:F3}", (double)obj["OF_Ybase"]);
                             txb_Rotate_OF_Han.Text = string.Format("{0:F3}", (double)obj["OF_Rotate"]);
                         }
                     }
@@ -825,6 +826,7 @@ namespace Apply_Gule_And_Tape_PC
                                 M3_F_D = float.Parse(M3_F_D.Text),
                                 N_Rotate = float.Parse(txb_N_Rotate.Text),
                                 OF_Xbase = float.Parse(txb_XBase_OF_Han.Text),
+                                OF_Ybase = float.Parse(txb_YBase_OF_Han.Text),
                                 OF_Rotate = float.Parse(txb_Rotate_OF_Han.Text),
                                 ON_Mode3 = true,
                             };

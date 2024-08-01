@@ -154,6 +154,7 @@ namespace Apply_Gule_And_Tape_PC
                             txb_F_D3.Text =  (string)obj["F_D"];
                             txb_SoVongQuay.Text = (string)obj["K"];
                             txb_XBase_OF_Han.Text = string.Format("{0:F3}", (double)obj["OF_Xbase"]);
+                            txb_YBase_OF_Han.Text = string.Format("{0:F3}", (double)obj["OF_Ybase"]);
                             txb_Rotate_OF_Han.Text = string.Format("{0:F3}", (double)obj["OF_Rotate"]);
                         }
                     }
@@ -240,7 +241,8 @@ namespace Apply_Gule_And_Tape_PC
             List_Model3.F_D = float.Parse(txb_F_D3.Text);
             List_Model3.K = float.Parse(txb_SoVongQuay.Text);
             List_Model3.OF_Xbase = float.Parse(txb_XBase_OF_Han.Text);
-            List_Model3.OF_Rotate = float.Parse(txb_XBase_OF_Han.Text);
+            List_Model3.OF_Ybase = float.Parse(txb_YBase_OF_Han.Text);
+            List_Model3.OF_Rotate = float.Parse(txb_Rotate_OF_Han.Text);
             string list_Model3_Json = JsonConvert.SerializeObject(List_Model3);
             try
             {
@@ -262,6 +264,7 @@ namespace Apply_Gule_And_Tape_PC
                         item.F_D = float.Parse(txb_F_D3.Text);
                         item.K = float.Parse(txb_SoVongQuay.Text);
                         item.OF_Xbase = float.Parse(txb_XBase_OF_Han.Text);
+                        item.OF_Ybase = float.Parse(txb_YBase_OF_Han.Text);
                         item.OF_Rotate = float.Parse(txb_Rotate_OF_Han.Text);
                         var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
                         string newJsonString = System.Text.Json.JsonSerializer.Serialize(data, jsonOptions);

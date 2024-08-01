@@ -673,6 +673,28 @@
                                              FontFamily="Source Sans Pro"></TextBox>
                                 </StackPanel>
                                 <StackPanel Width="137.15">
+                                    <Label Content="Y Base (mm)"
+            FontSize="12"
+            Height="25"
+            FontStyle="Normal"
+            FontWeight="Bold"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontFamily="Source Sans Pro"></Label>
+                                    <TextBox Style="{StaticResource BlackCaretTextBoxStyle}"
+              x:Name="txb_YBase_OF_Han"
+              Width="120"
+              Height="35"
+              BorderBrush="Black"
+              BorderThickness="1"
+              VerticalContentAlignment="Center"
+              HorizontalContentAlignment="Center"
+              HorizontalAlignment="Center"
+              FontSize="20"
+              FontStyle="Normal"
+              FontFamily="Source Sans Pro"></TextBox>
+                                </StackPanel>
+                                <StackPanel Width="137.15">
                                     <Label Content="Xoay (Vòng)"
                                            FontSize="12"
                                            Height="25"
