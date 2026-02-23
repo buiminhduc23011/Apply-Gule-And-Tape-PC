@@ -20,6 +20,15 @@ Tùy chọn thêm:
 
 - `--decimals 3`: số chữ số thập phân output.
 - `--default-z 0`: nếu chưa có Z trước đó thì dùng giá trị này.
+- `--arc-step 1.0`: bước nội suy tối đa (mm) cho cung tròn `G2/G3`.
+
+### Nội suy cung tròn G2/G3
+
+Tool có hỗ trợ chuyển cung tròn (clockwise/counterclockwise) sang nhiều điểm XY trung gian để bám đúng đường cong.
+
+- Hỗ trợ mode tọa độ `G90` (tuyệt đối) và `G91` (gia số).
+- Với cung `G2/G3`, tool dùng tâm `I/J` để nội suy ra các điểm con.
+- Giá trị `Z` sẽ nội suy tuyến tính từ đầu cung tới cuối cung.
 
 ### Ví dụ
 
@@ -28,15 +37,17 @@ Input G-code:
 ```gcode
 G0 X0 Y0 Z5
 G1 X10 Y0
-G1 X10 Y8 Z1.2
+G3 X10 Y10 I0 J5
 ```
 
-Output Mode 1:
+Output Mode 1 (rút gọn):
 
 ```txt
 X0.000 Y0.000 Z5.000
 X10.000 Y0.000 Z5.000
-X10.000 Y8.000 Z1.200
+X9.024 Y0.096 Z5.000
+...
+X10.000 Y10.000 Z5.000
 ```
 
 Sau khi tạo xong file `.txt`, mở phần mềm và chọn đúng Model ở chế độ Mode 1.
